@@ -1,0 +1,9 @@
+# Build / IDE
+.pio/
+.vscode/
+.idea/
+*.code-workspace
+
+# WiFi credentials (all variants)
+data/WiFi*.txt
+!data/WiFi.example.txt

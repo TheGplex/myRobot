@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Robot Telemetry</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="script.js"></script>
+</head>
+<body>
+
+    <div>Battery Percentage: <span id="batteryPercentage">%BAT_PCT%</span></div>
+    <div>Battery Level: <span id="batteryLevel">%BAT_LVL%</span></div>
+    <div>Battery State: <span id="batteryState">%BAT_STAT%</span></div>
+    <div>Note: Battery data is inaccurate during charging</div>
+    <div>
+        <button onclick="refreshBatteryPercent()">Refresh Battery Data</button>
+    </div>
+
+    <div>
+        Linefollower Values: <span id="lfValues">%LF_VAL%</span>
+    </div>
+    <div>
+        <button onclick="refreshLfValues()">Refresh Linefollower Values</button>
+    </div>
+
+</body>
+</html>
