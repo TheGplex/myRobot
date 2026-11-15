@@ -43,9 +43,10 @@ Components are enabled with build flags in `platformio.ini`:
 
 ## Setup
 
-1. Create `data/WiFi.txt` (it is in `.gitignore` and never committed). Line 1 is the WiFi **password**, line 2 the **SSID**. A template is in `data/WiFi.example.txt`.
-2. Adjust the static IP address in `lib/syscore/syscore.cpp` to your network.
-3. Upload the file system and the firmware. The first upload has to be done over USB; after that, `platformio.ini` uploads over the air (OTA) to the robot's IP address (`upload_port`).
+1. Copy `include/secrets.example.h` to `include/secrets.h` and set an OTA password. Set the same password as the environment variable `OTA_PASSWORD` (used by `upload_flags` for OTA uploads).
+2. Create `data/WiFi.txt` (it is in `.gitignore` and never committed). Line 1 is the WiFi **password**, line 2 the **SSID**. A template is in `data/WiFi.example.txt`.
+3. Adjust the static IP address in `lib/syscore/syscore.cpp` to your network.
+4. Upload the file system and the firmware. The first upload has to be done over USB; after that, `platformio.ini` uploads over the air (OTA) to the robot's IP address (`upload_port`).
 
 ```bash
 pio run -t uploadfs
