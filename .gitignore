@@ -7,3 +7,6 @@
 # WiFi credentials (all variants)
 data/WiFi*.txt
 !data/WiFi.example.txt
+
+# OTA password
+include/secrets.h

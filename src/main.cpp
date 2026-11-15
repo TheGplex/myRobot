@@ -1,5 +1,5 @@
 #include "myRobot.h"
-
+#include "secrets.h"
 #include <ArduinoOTA.h>
 
 WiFiInfo wi;
@@ -13,6 +13,7 @@ void setup() {
       while (1) {} // wait until code/network fixed
     } else {
       Serial.println("Initializized WiFi!");
+      ArduinoOTA.setPassword(OTA_PASSWORD);
       ArduinoOTA.begin();
     }
   }
