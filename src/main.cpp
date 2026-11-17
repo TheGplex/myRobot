@@ -27,7 +27,7 @@ void setup() {
   initWebServer();
 
   initDriving();
-  speedL = speedR = 100;
+  speedL = speedR = 50;
   drive(FORWARD, speedL, speedR);
 
   initLinefollower();
