@@ -91,7 +91,7 @@ extern uint64_t lastMeasureStart;
 #define LF_NUM_VALUES 10
 #define LF_READING_TIME 20 // ms, Lf values are measured every LF_READING_TIME ms
 
-#define LF_ONTRACK_MIN 2000 // the mimimum value to still be detected as "on-track"
+#define LF_ONTRACK_MIN 1500 // the mimimum value to still be detected as "on-track"
 #define LF_REFRESH_TIME 20 // in ms, how often the direction is calculated
 
 extern int lfValues[LF_NUM_VALUES][2]; // Storage for the last 3 values of the left and right linefollower
@@ -100,16 +100,16 @@ extern int lfValueAvg[2]; // Storage for the median value of the left and right 
 #define LF_ANZ_TRACKCOLORS 4
 const int trackcolors[LF_ANZ_TRACKCOLORS] = {STATE_BLACK, STATE_RED, STATE_GREEN, STATE_BLUE};
 
-#define LF_FAR_LEFT (-4)
-#define LF_MEDIUM_LEFT (-3)
-#define LF_SLIGHTLY_LEFT (-2)
+#define LF_FAR_LEFT (-5)
+#define LF_MEDIUM_LEFT (-2)
+#define LF_SLIGHTLY_LEFT (-1)
 #define LF_BALANCED 0
-#define LF_SLIGHTLY_RIGHT 2
-#define LF_MEDIUM_RIGHT 3
-#define LF_FAR_RIGHT 4
+#define LF_SLIGHTLY_RIGHT 1
+#define LF_MEDIUM_RIGHT 2
+#define LF_FAR_RIGHT 5
 
-#define LF_CORRECTION_FACTOR 5
-#define LF_DAMP_FACTOR 0.7
+#define LF_CORRECTION_FACTOR 8
+#define LF_DAMP_FACTOR 0.525
 #endif
 
 

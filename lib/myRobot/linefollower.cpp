@@ -82,10 +82,9 @@ void linefollower() {   // v1
         int tempSpeedL = speedL;
         int tempSpeedR = speedR;
 
-        float fadeoutL_mult = 1;
-        float fadeoutR_mult = 1;
-
-        if (leftOnTrack && rightOnTrack && colorOnTrack) {
+        if (colorState == STATE_GREEN) { // on the green stripes, the linefollower values contain errors (think it is white) so just ignore
+            b = bprev;
+        } else if (leftOnTrack && rightOnTrack && colorOnTrack) {
             b = bprev * LF_DAMP_FACTOR;
         } else if (!leftOnTrack && rightOnTrack && colorOnTrack) {
             b = LF_SLIGHTLY_LEFT;
@@ -103,11 +102,11 @@ void linefollower() {   // v1
             b = bprev;
         }
 
-        tempSpeedL *= (1 - (float) b / LF_CORRECTION_FACTOR) * fadeoutL_mult;
-        tempSpeedR *= (1 + (float) b / LF_CORRECTION_FACTOR) * fadeoutR_mult;
+        tempSpeedL *= (1 - (float) b / LF_CORRECTION_FACTOR);
+        tempSpeedR *= (1 + (float) b / LF_CORRECTION_FACTOR);
 
         drive(FORWARD, tempSpeedL, tempSpeedR);
-        bprev=b;
+        bprev = b;
     }
 }
 

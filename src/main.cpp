@@ -27,7 +27,7 @@ void setup() {
   initWebServer();
 
   initDriving();
-  speedL = speedR = 50;
+  speedL = speedR = 50; // sucessfull drove whole lap with speed 50
   drive(FORWARD, speedL, speedR);
 
   initLinefollower();
